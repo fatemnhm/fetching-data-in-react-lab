@@ -1,3 +1,5 @@
+import React from 'react';
+
 const StarshipCard = ({ starship }) => {
   return (
     <li>
@@ -10,4 +12,3 @@ const StarshipCard = ({ starship }) => {
 };
 
 export default StarshipCard;
-

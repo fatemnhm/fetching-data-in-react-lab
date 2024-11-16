@@ -1,3 +1,5 @@
+// src/components/StarshipList.jsx
+import React from 'react';
 import StarshipCard from './StarshipCard';
 
 const StarshipList = ({ starships, search }) => {
@@ -7,7 +9,7 @@ const StarshipList = ({ starships, search }) => {
 
   return (
     <section>
-      <h2>Starship List</h2>
+      <h2>Starship List ({filteredStarships.length})</h2>
       <ul>
         {filteredStarships.map((starship) => (
           <StarshipCard key={starship.name} starship={starship} />
@@ -17,5 +19,4 @@ const StarshipList = ({ starships, search }) => {
   );
 };
 
-
-  export default StarshipList
+export default StarshipList;

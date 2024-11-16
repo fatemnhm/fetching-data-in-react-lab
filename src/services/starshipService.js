@@ -1,14 +1,13 @@
 const BASE_URL = 'https://swapi.dev/api/starships/';
 
-const getStarships = async () => {
+export const getStarships = async () => {
   try {
     const response = await fetch(BASE_URL);
+    if (!response.ok) throw new Error('Network response was not ok');
     const data = await response.json();
     return data.results;
   } catch (error) {
-    console.error('Error fetching starships:', error);
+    console.error('Fetch error:', error);
+    throw error;
   }
 };
-
-
-export { getStarships};

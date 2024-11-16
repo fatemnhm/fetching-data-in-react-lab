@@ -1,32 +1,27 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-const StarshipSearch = ({ setsearch }) => {
-  const [input, setInput] = useState('');
+const StarshipSearch = ({ onSearch }) => {
+  const [query, setQuery] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setsearch(input);
+    onSearch(query);
   };
 
   return (
-    <section>
-      <h2>Search Starships</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Enter starship name"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-        />
-        <button type="submit">Search</button>
-      </form>
-    </section>
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="Search for a starship"
+      />
+      <button type="submit">Search</button>
+    </form>
   );
 };
 
 export default StarshipSearch;
-
-
 
 
 
